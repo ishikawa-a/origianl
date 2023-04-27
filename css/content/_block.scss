@@ -1,0 +1,338 @@
+@use '../config/variable' as variable;
+
+/*-----------------------------------------
+    Block
+-----------------------------------------*/
+
+/*-----------------------------------------
+    テキスト
+-----------------------------------------*/
+  // 見出し
+  
+  .container{
+    h2, h3, h4, h5, h6 {
+      margin: 2em 0 1em;
+      line-height: 1.6;
+      font-weight: variable.$fw-m;
+    }
+    h2 {
+      font-size: 22px;
+      padding-bottom: 8px;
+      margin: 3em 0 1.5em;
+      margin-top: 60px;
+      @include variable.mq-sp {
+        font-size: 20px;
+      }
+    }
+    h3 {
+      font-size: 18px;
+      margin: 3em 0 1em;
+      font-weight: variable.$fw-b;
+      @include variable.mq-sp {
+        font-size: 18px;
+      }
+    }
+    h4 {
+      font-size: 20px;
+      @include variable.mq-sp {
+        font-size: 18px;
+      }
+    }
+    h5 {
+      font-size: 16px;
+      @include variable.mq-sp {
+        font-size: 15px;
+      }
+    }
+    h6 {
+      font-size: 14px;
+      @include variable.mq-sp {
+        font-size: 14px;
+      }
+    } // 段落・リスト・テーブル
+    p, ul, ol, table {
+      font-size: 15px;
+      margin: 1em 0 2em;
+      line-height: 2;
+      @include variable.mq-tab {
+        font-size: 15px;
+      }
+    }
+    p {
+      font-size: 15px;
+    }
+    strong {
+      font-weight: variable.$fw-b
+    }
+    
+    em {
+      font-style: italic;
+    }
+    
+    s {
+      text-decoration: line-through;
+    }
+    
+    sup {
+      vertical-align: super;
+      font-size: smaller;
+    }
+    
+    sub {
+      vertical-align: sub;
+      font-size: smaller;
+    }
+    
+    pre, code {
+      font-family: variable.$ff-sans;
+    }
+    
+    ul {
+      padding-left: 2em;
+      li {
+        list-style: disc;
+        margin: 5px 0;
+      }
+    }
+    li ul li {
+      list-style: circle;
+    }
+    ol {
+      padding-left: 2em;
+      li {
+        list-style: decimal;
+        margin: 5px 0;
+      }
+    }
+    li ol li {
+      list-style: lower-roman;
+    }
+    table {
+      border: 1px solid #CCC;
+      margin-bottom: 2em;
+      th {
+        background: #eee;
+        border: 1px solid #CCC;
+        padding: 10px 15px;
+        font-weight: variable.$fw-m;
+      }
+      td {
+        padding: 10px 15px;
+        border: 1px solid #CCC;
+      }
+    }
+    @include variable.mq-sp {
+      table, tbody, tr, th, td {
+        display: block;
+        width: 100% !important;
+      }
+      table {
+        border-bottom: none;
+        th {
+          text-align: left;
+          background: variable.$c-light01;
+          padding: 8px 10px;
+          border: none;
+          border-bottom: 1px solid #CCC;
+        }
+        td {
+          border-bottom: none;
+          border: none;
+          border-bottom: 1px solid #CCC;
+        }
+      }
+    }
+    
+    // テキスト装飾
+    a {
+      color: variable.$c-link;
+      text-decoration: underline;
+      transition: variable.$transition;
+      &:hover {
+        color: variable.$c-link-hover;
+      }
+    }
+  }
+  
+// 全幅ページのコンテナ替わり
+.block_content.fullwidth {
+  >*:not(.alignwide):not(.alignfull), .wp-block-group__inner-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: variable.$container-width;
+    padding-left: variable.$container-padding;
+    padding-right: variable.$container-padding;
+  }
+  .alignwide {
+    width: 100%;
+    padding-left: variable.$container-padding;
+    padding-right: variable.$container-padding;
+    max-width: 1384px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .alignfull {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.wp-block-group {
+  position: relative;
+}
+
+// フロント・エディタ共通 本文
+.block_content, .block-editor-block-list__layout {
+  font-size: 15px;
+  *:first-child {
+    margin-top: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+
+  // 引用
+  .wp-block-quote {
+    border-left: 4px solid #555;
+    margin: 0 auto 2em;
+    padding-left: 1em;
+    p {
+      font-size: 18px;
+      margin-bottom: 1em;
+    }
+    cite {
+      font-size: 13px;
+      color: variable.$c-txt-secondary;
+      font-style: normal;
+    }
+  }
+  
+  // プルクオート
+  .wp-block-pullquote {
+    padding: 3em 0 1em;
+    border-top: 4px solid #555;
+    border-bottom: 4px solid #555;
+    margin-bottom: 2em;
+    blockquote {
+      p {
+        font-size: 30px;
+        color: variable.$c-txt-primary;
+        margin-bottom: 1em;
+      }
+      cite {
+        font-size: 16px;
+        color: variable.$c-txt-secondary;
+        font-style: normal;
+      }
+    }
+    .wp-block-pullquote__citation {
+      margin-top: 30px;
+    }
+  }
+  
+  //整形済みテキスト
+  pre, code {
+    font-family: variable.$ff-sans;
+  }
+  .wp-block-preformatted {
+    font-family: inherit;
+    margin-bottom: 2em;
+  }
+  
+  // コード
+  .wp-block-code {
+    font-family: inherit;
+    border: 1px solid variable.$c-border;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  
+  //詩
+  .wp-block-verse {
+    margin-bottom: 2em;
+  }
+  
+  // クラシック
+  
+  
+  /*-----------------------------------------
+    メディア
+-----------------------------------------*/
+  // 画像
+  //区切り線
+  hr {
+    display: block;
+    margin: 40px 0;
+    border: none;
+    border-bottom: 1px solid variable.$c-border;
+    max-width: none !important;
+  }
+  
+  //画像
+  figure {
+    display: block;
+    text-align: center;
+  }
+  figcaption {
+    font-size: 14px;
+    color: variable.$c-txt-secondary;
+  }
+  .wp-block-image {
+    margin-bottom: 2em;
+  }
+  //btn
+  .wp-block-buttons {
+    text-align: center;
+  }
+  .wp-block-button__link {
+    background: variable.$c-primary;
+    color: variable.$c-white;
+    text-decoration: none;
+  }
+  
+  //column
+  .wp-block-column {
+    figure {
+      margin-bottom: 0;
+    }
+    @include variable.mq-sp {
+      margin-bottom: 15px;
+    }
+  }
+  
+  //classicエディタ
+  .alignright {
+    float: right;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
+  .alignleft {
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 2em;
+  }
+  @include variable.mq-sp {
+    .alignright, .alignleft {
+      float: none;
+      margin: 0 auto 2em;
+      display: block;
+    }
+  }
+  .wp-block-columns.reverse {
+    flex-direction: row-reverse;
+    .wp-block-column:not(:first-child) {
+      margin-left: 0;
+      margin-right: 2em;
+    }
+  }
+}
+
+.has-text-align-center {
+  text-align: center !important;
+}
+
+.wp-block-image {
+  margin-bottom: 2em;
+}

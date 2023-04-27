@@ -1,0 +1,133 @@
+@use '../config/variable' as variable;
+
+/*-----------------------------------------
+    Module
+-----------------------------------------*/
+
+
+
+
+// フロント・エディタ共通 本文
+.block_content, .block-editor-block-list__layout {
+  font-size: 15px;
+  *:first-child {
+    margin-top: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  
+  // プルクオート
+  .wp-block-pullquote {
+    padding: 3em 0 1em;
+    border-top: 4px solid #555;
+    border-bottom: 4px solid #555;
+    margin-bottom: 2em;
+    blockquote {
+      p {
+        font-size: 30px;
+        color: variable.$c-txt-primary;
+        margin-bottom: 1em;
+      }
+      cite {
+        font-size: 16px;
+        color: variable.$c-txt-secondary;
+        font-style: normal;
+      }
+    }
+    .wp-block-pullquote__citation {
+      margin-top: 30px;
+    }
+  }
+  
+  //整形済みテキスト
+  .wp-block-preformatted {
+    font-family: inherit;
+    margin-bottom: 2em;
+  }
+  
+  // コード
+  .wp-block-code {
+    font-family: inherit;
+    border: 1px solid variable.$c-border;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  
+  //詩
+  .wp-block-verse {
+    margin-bottom: 2em;
+  }
+  
+  // クラシック
+  
+  
+  /*-----------------------------------------
+    メディア
+-----------------------------------------*/
+  // 画像
+  //区切り線
+  hr {
+    display: block;
+    margin: 40px 0;
+    border: none;
+    border-bottom: 1px solid variable.$c-border;
+    max-width: none !important;
+  }
+  
+  //画像
+  figure {
+    display: block;
+    text-align: center;
+  }
+  figcaption {
+    font-size: 14px;
+    color: variable.$c-txt-secondary;
+  }
+
+  //btn
+  .wp-block-buttons {
+    text-align: center;
+  }
+  .wp-block-button__link {
+    background: variable.$c-primary;
+    color: variable.$c-white;
+    text-decoration: none;
+  }
+  
+
+  
+  //classicエディタ
+  .alignright {
+    float: right;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
+  .alignleft {
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 2em;
+  }
+  @include variable.mq-sp {
+    .alignright, .alignleft {
+      float: none;
+      margin: 0 auto 2em;
+      display: block;
+    }
+  }
+  .wp-block-columns.reverse {
+    flex-direction: row-reverse;
+    .wp-block-column:not(:first-child) {
+      margin-left: 0;
+      margin-right: 2em;
+    }
+  }
+}
+
+.has-text-align-center {
+  text-align: center !important;
+}
+

@@ -1,0 +1,90 @@
+@use '../config/variable' as variable;
+
+/*-----------------------------------------
+    Navigation
+-----------------------------------------*/
+
+// Global Navi
+
+.global-nav{
+  .global-nav__list{
+    display: flex;
+  }
+}
+
+.breadcrumb{
+  ol{
+    display: block;
+    li{
+      display: inline;
+      font-size: 16px;
+      max-width: 450px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    li + li::before{
+      content: ">";
+      margin: 0 12px;
+    }
+  }
+}
+.sub_nav{
+  margin-bottom: 90px;
+  nav{
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row;
+    .search_form{
+      form{
+        position: relative;
+        &::before {
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: #fff;
+          color: #ddd;
+          font-size: 18px;
+          position: absolute;
+          left: 15px;
+        }
+      }    
+      input[type="text"]{
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #999;
+        height: 40px;
+        padding-left: 40px;
+        padding-right: 20px;
+        width: 100%;
+        min-width: 286px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 883px){
+  .sub_nav {
+    nav{
+      flex-wrap: wrap;
+      .search_form{
+        width: 100%;
+        margin: 30px auto 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 599px){
+  .sub_nav{
+    margin-bottom: 30px;
+    .breadcrumb ol li{
+      font-size: 14px;
+    }
+    nav{
+      .search_form{
+        margin: 10px auto 0;
+      }
+    }
+  }
+}

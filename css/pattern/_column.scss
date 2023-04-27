@@ -1,0 +1,15 @@
+@use '../config/variable' as variable;
+
+/*-----------------------------------------
+    Column
+-----------------------------------------*/
+
+//column
+.wp-block-column {
+  figure {
+    margin-bottom: 0;
+  }
+  @include variable.mq-sp {
+    margin-bottom: 15px;
+  }
+}

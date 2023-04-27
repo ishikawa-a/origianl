@@ -1,0 +1,23 @@
+@use '../config/variable' as variable;
+
+/*-----------------------------------------
+    Header
+-----------------------------------------*/
+
+.header{
+  .header__container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: variable.$container-width;
+    padding-left: variable.$container-padding;
+    padding-right: variable.$container-padding;
+    display: flex;
+    .header__logo{
+      font-size: 32px;
+    }
+  }
+  padding: 10px 0;
+  background: #FFF;
+  border-bottom: solid 1px #EEE;
+}
+

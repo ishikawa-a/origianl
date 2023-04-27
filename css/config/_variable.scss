@@ -1,0 +1,174 @@
+/*-----------------------------------------
+    Colors
+-----------------------------------------*/
+
+// primary & Secondary 
+
+$c-primary         : #708069;
+$c-primary-dark    : #444 !default;
+$c-primary-light   : #D9DFD6;
+
+$c-secondary       : #D2A4A4 ;
+$c-secondary-dark  : #444 !default;
+$c-secondary-light : #ccc !default;
+
+
+$c-txt-primary   : #222;
+$c-txt-secondary : #555;
+$c-border        : #708069 ;
+$c-link          : #708069;
+$c-link-hover    : #999 !default;
+
+
+// Neutral Colors
+
+$c-white     : #FFFFFF !default;
+$c-light01   : #F5F4EF;
+$c-light02   : #EEEEEE !default;
+
+$c-black     : #000000 !default;
+$c-dark01    : #333333 !default;
+$c-dark02    : #666666 !default;
+
+// Utility Colors 
+
+$c-red      : #E14545 !default;
+$c-gray     : #CCCCCC !default;
+
+$c-bg01 : #F5F5F5;
+$c-bg02 : #EFF6EC;
+$c-bg03 : #FBEDE4;
+
+
+
+/*-----------------------------------------
+    Font
+-----------------------------------------*/
+
+// Notofont
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700|Noto+Serif+JP:300,400,500,700&display=swap&subset=japanese');
+
+$ff-sans  : "Noto Sans JP","HelveticaNeue", "Helvetica", "Arial", sans-serif !default;
+$ff-serif : "Noto Serif JP", "Georgia", "Times", "Times New Roman", serif !default;
+
+$fw-l  : 300;
+$fw-r  : 400;
+$fw-m  : 500;
+$fw-b  : 700;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+$ff-eng : "Sacramento";
+
+
+
+/*-----------------------------------------
+    icomoon
+-----------------------------------------*/
+
+@import url("../addons/icomoon/style.css");
+$ff-icon  : 'icomoon' !important;
+
+
+
+/*-----------------------------------------
+    container
+-----------------------------------------*/
+
+$container-padding : 32px !default;
+
+$container-large   : 1384px !default;
+$container-width   : 1184px !default;
+$container-small   : 884px !default;
+
+
+//2column
+
+$main-width        :736px !default ;
+$side-width        :352px !default ;
+
+
+
+/*-----------------------------------------
+    Media query
+-----------------------------------------*/
+
+// break point
+
+$bp-pc_l  : $container-large !default;
+$bp-pc    : $container-large -1 !default;
+$bp-pc_s  : $container-width -1 !default;
+$bp-tab    : $container-small -1 !default;
+$bp-tab_s  : 781px !default;
+$bp-sp   : 599px !default;
+$bp-sp_s : 420px !default;
+
+
+@mixin mq-pc_l{ // 1384~~
+  @media screen and (min-width : $bp-pc_l){
+    @content;
+  }
+}
+
+@mixin mq-pc{ // ~~1383
+  @media screen and (max-width : $bp-pc){
+    @content;
+  }
+}
+
+@mixin mq-pc_s{ // ~1183
+  @media screen and (max-width : $bp-pc_s){
+    @content;
+  }
+}
+
+@mixin mq-tab{ // ~919
+  @media screen and (max-width : $bp-tab){
+    @content;
+  }
+}
+@mixin mq-tab_s{ // ~781
+  @media screen and (max-width : $bp-tab_s){
+    @content;
+  }
+}
+@mixin mq-sp{ // ~599
+  @media screen and (max-width : $bp-sp){
+    @content;
+  }
+}
+@mixin mq-sp_s{ // ~420
+  @media screen and (max-width : $bp-sp_s){
+    @content;
+  }
+}
+
+
+
+/*-----------------------------------------
+    Variable
+-----------------------------------------*/
+
+@mixin clearfix{
+  &::after{
+    content: "";
+	  display: block;
+	  clear: both;
+  }
+}
+
+$transition : all .3s ease 0s !default;
+$box-shadow : 0 3px 6px rgba(0,0,0,.16);
+
+@mixin marker{
+  background: linear-gradient(transparent 60%, #ff6 60%);
+}
+
+@mixin abs0{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
