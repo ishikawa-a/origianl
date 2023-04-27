@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@use 'config/common' as common;
+@use 'config/utility' as utility;
+
+@use 'content/block' as block;
+@use 'content/page' as page;
+
+@use 'pattern/column' as column;
+@use 'pattern/news' as news;

@@ -4,27 +4,32 @@
 
 // primary & Secondary 
 
-$c-primary         : #708069;
+$c-primary         : var(--c-primary);
 $c-primary-dark    : #444 !default;
 $c-primary-light   : #D9DFD6;
 
-$c-secondary       : #D2A4A4 ;
+$c-secondary       : var(--c-secondary) ;
 $c-secondary-dark  : #444 !default;
 $c-secondary-light : #ccc !default;
 
 
-$c-txt-primary   : #222;
-$c-txt-secondary : #555;
-$c-border        : #708069 ;
-$c-link          : #708069;
-$c-link-hover    : #999 !default;
+$c-txt-primary   : var(--c-txt-primary);
+$c-txt-secondary : var(--c-txt-secondary);
+
+$c-bg01 : var(--c-bg01);
+$c-bg02 : var(--c-bg02);
+$c-bg03 : var(--c-bg03);
+
+$c-border        : var(--c-border);
+$c-link          : var(--c-link);
+$c-link-hover    : var(--c-link-hover);
 
 
 // Neutral Colors
 
 $c-white     : #FFFFFF !default;
-$c-light01   : #F5F4EF;
-$c-light02   : #EEEEEE !default;
+$c-light01   : #eff2f5 !default;
+$c-light02   : #dadddc !default;
 
 $c-black     : #000000 !default;
 $c-dark01    : #333333 !default;
@@ -34,10 +39,6 @@ $c-dark02    : #666666 !default;
 
 $c-red      : #E14545 !default;
 $c-gray     : #CCCCCC !default;
-
-$c-bg01 : #F5F5F5;
-$c-bg02 : #EFF6EC;
-$c-bg03 : #FBEDE4;
 
 
 

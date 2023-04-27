@@ -21,7 +21,7 @@ html{
 body{
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  color: #000;
+  color: $c-txt-primary;
   line-height: 1.8;
   font-size: 16px;
   font-family: variable.$ff-sans;

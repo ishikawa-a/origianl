@@ -1,4 +1,7 @@
 <?php
+// エディタ用CSS
+add_editor_style('editor.css');
+
 // パンくずリスト
 function custom_breadcrumb() {
   
